@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label>Bilangan1 :</label></td>
+                <td><input type="number" id="bil1"></td>
+            </tr>
+
+            <tr>
+                <td><label>Bilangan2 :</label></td>
+                <td><input type="number" id="bil2"></td>
+            </tr>
+            
+            <tr>
+                <td><label> </label></td>    
+                <td>
+                    <input type="button"  value="+" onclick="hitung('+')">
+                    <input type="button"  value="-" onclick="hitung('-')">
+                    <input type="button"  value="X" onclick="hitung('*')">
+                    <input type="button"  value=":" onclick="hitung('/')">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Output :</label></td>
+                <td><input type="text" id="output" readonly></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function hitung (op) {
+           let bil1= parseFloat(document.getElementById('bil1').value);
+           let bil2=parseFloat(document.getElementById('bil2').value);
+
+           let hasil = 0
+
+           switch(op) {
+             case"+":hasil =bil1+bil2;break;
+             case"-":hasil =bil1-bil2;break;
+             case"*":hasil =bil1*bil2;break;
+             case"/":hasil= bil2 !==0 ? bil1/bil2 : "Error (bagi 0)";break;
+           }
+
+           document.getElementById("output").value = hasil;
+
+        }
+    </script>
+    
+</body>
+</html>
